@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Add Entry
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+  body
+    .container
+      .row.mt-5
+        .col-6.offset-3.bg-light.p-5.rounded.mt-5.border.border-dark
+          form(action='/edityourentry/'+data._id method='POST')
+            .mb-3
+              label.form-label(for='name') Enter your Name
+              input#name.form-control.bg-white(type='name' name='name' value=data.name aria-describedby='emailHelp')
+            .mb-3
+              label.form-label(for='exampleInputPassword1') Age
+              input#age.form-control.bg-white(type='Number' name='age' value=data.age)
+            br
+            br
+            button.btn.btn-warning.btn-block(type='submit') Edit Existing Entry
